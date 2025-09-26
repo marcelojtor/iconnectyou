@@ -1,0 +1,87 @@
+:root{
+  --primary:#e63946;
+  --text:#1f2937;
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --surface:#ffffff;
+  --border:#e5e7eb;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+img{max-width:100%;display:block}
+
+.container{max-width:1120px;margin:0 auto;padding:0 16px}
+.flex{display:flex;gap:12px}
+.center-v{align-items:center}
+.between{justify-content:space-between}
+
+.topbar{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:100}
+.brand{text-decoration:none;color:var(--text);font-weight:700;gap:10px}
+.logo{width:36px;height:36px;object-fit:contain}
+.nav a{color:var(--text);text-decoration:none;padding:10px 12px;border-radius:10px}
+.nav a:hover,.nav a.active{background:#f3f4f6}
+.btn-primary{background:var(--primary);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600}
+.btn-ghost{border:1px solid var(--border);color:var(--text);text-decoration:none;padding:10px 16px;border-radius:10px}
+.link{color:var(--primary);text-decoration:none}
+
+.hero{position:relative;min-height:60vh;background:url('../img/hero.jpg') center/cover no-repeat;color:#fff;display:flex;align-items:center}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.35))}
+.hero-inner{position:relative;z-index:1;padding:56px 0}
+.hero-title{font-size:40px;margin:0 0 10px}
+.hero-sub{opacity:.95;margin:0 0 16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.badges{display:flex;gap:8px;list-style:none;padding:0;margin:20px 0 0}
+.badges li{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);padding:8px 12px;border-radius:999px}
+
+.section{padding:48px 0}
+.section-alt{background:#f9fafb}
+.section-title{margin:0 0 16px}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.grid-3{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px}
+.card h3{margin:10px 0 6px}
+.card p{margin:0;color:var(--muted)}
+.card .thumb{height:160px;border-radius:12px;object-fit:cover;width:100%;background:#eee}
+
+.legal-strip{background:#0f172a;color:#e5e7eb}
+.legal-content{display:flex;gap:12px;align-items:center;padding:14px 0}
+.legal-icon{display:flex;align-items:center;justify-content:center;background:#111827;border:1px solid #1f2937;color:#93c5fd;border-radius:10px;width:38px;height:38px;flex:0 0 38px}
+.legal-text{line-height:1.35}
+.legal-text .line{display:block}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+.about-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px}
+
+.pay-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pay-badges .badge{border:1px solid var(--border);background:#fff;border-radius:999px;padding:8px 12px;font-weight:600}
+.pay-badges .badge.pix{border-color:#34d399}
+.pay-badges .badge.visa{border-color:#2563eb}
+.pay-badges .badge.mastercard{border-color:#ef4444}
+.pay-badges .badge.elo{border-color:#111827}
+.pay-badges .badge.amex{border-color:#14b8a6}
+
+.cert-list{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}
+.cert-list li{display:flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:12px;padding:8px 12px;background:#fff}
+.cert-list svg{color:#10b981}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px}
+.map-wrap{height:380px;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+
+.footer{padding:22px 0;border-top:1px solid var(--border);background:#fff}
+
+.whatsapp-float{
+  position:fixed;right:20px;bottom:20px;
+  width:56px;height:56px;border-radius:50%;
+  background:#22c55e;color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 30px rgba(0,0,0,.2);
+  text-decoration:none;z-index:200;
+  transform:translateY(120%);opacity:0;transition:transform .3s ease,opacity .3s ease;
+}
+.whatsapp-float.show{transform:translateY(0);opacity:1}
