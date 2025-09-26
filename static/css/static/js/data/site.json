@@ -16,7 +16,7 @@
     "email": "contato@restaurantedemo.com.br"
   },
   "hero": {
-    "image": "./hub_de_imagens/Banners/full_banner.png",
+    "image": "hub_de_imagens/Banners/full_banner.png",
     "headline": "Sabor e agilidade para o seu dia.",
     "subheadline": "Ingredientes frescos e atendimento direto no WhatsApp.",
     "badges": ["Entrega rápida", "Receitas artesanais", "Equipe dedicada"]
