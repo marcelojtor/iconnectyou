@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-bind="title">Negócio — Site Matriz</title>
+  <meta name="description" content="Presença digital rápida com site profissional, WhatsApp e informações legais." />
+  <link rel="stylesheet" href="static/css/styles.css" />
+  <link rel="preload" href="data/site.json" as="fetch" crossorigin="anonymous" />
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container flex between center-v">
+      <a class="brand flex center-v" href="#home" aria-label="Ir para início">
+        <img src="static/img/logo.png" alt="Logo" class="logo" />
+        <span data-bind="business_name">Nome do Negócio</span>
+      </a>
+      <nav class="nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#sobre">Quem somos</a>
+        <a href="#pagamento">Pagamentos</a>
+        <a href="#certificados">Certificados</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn-primary" data-bind="whatsapp_link" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- Hero / Full Banner -->
+  <section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="container hero-inner">
+      <h1 class="hero-title" data-bind="headline">Seu sabor, sua marca, seu site.</h1>
+      <p class="hero-sub" data-bind="subheadline">Visibilidade, confiança e vendas no mesmo lugar.</p>
+      <div class="actions">
+        <a class="btn-primary" href="#card-grid" aria-label="Ver destaques">Ver destaques</a>
+        <a class="btn-ghost" href="#contato" aria-label="Como chegar">Como chegar</a>
+      </div>
+      <ul class="badges">
+        <li data-bind="badge1">Entrega rápida</li>
+        <li data-bind="badge2">Atendimento humano</li>
+        <li data-bind="badge3">Ingredientes selecionados</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Cards (3) -->
+  <section class="section container" id="card-grid">
+    <h2 class="section-title">O que você encontra aqui</h2>
+    <div class="grid-3" id="cards_container"></div>
+  </section>
+
+  <!-- Card Fino Legal (CNPJ / Razão / Inscrições) -->
+  <section class="legal-strip">
+    <div class="container legal-content">
+      <div class="legal-icon" aria-hidden="true">
+        <!-- Cadeado -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a5 5 0 00-5 5v3H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-1V6a5 5 0 00-5-5zm-3 8V6a3 3 0 116 0v3H9z"/></svg>
+      </div>
+      <div class="legal-text" id="legal_lines"></div>
+    </div>
+  </section>
+
+  <!-- Sobre / Quem somos / História -->
+  <section id="sobre" class="section section-alt">
+    <div class="container about-grid">
+      <article class="about-card">
+        <h3 data-bind="about_title">Quem somos</h3>
+        <p id="about_text"></p>
+      </article>
+      <article class="about-card">
+        <h3 data-bind="history_title">Nossa História</h3>
+        <p id="history_text"></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Formas de Pagamento -->
+  <section id="pagamento" class="section">
+    <div class="container">
+      <h2 class="section-title">Formas de pagamento</h2>
+      <p class="muted" id="payments_note"></p>
+      <div class="pay-badges" id="payments_badges"></div>
+    </div>
+  </section>
+
+  <!-- Certificados de Segurança -->
+  <section id="certificados" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Certificados & Selos</h2>
+      <ul class="cert-list" id="cert_list"></ul>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h3>Endereço & horário</h3>
+        <p id="endereco"></p>
+        <p id="horarios"></p>
+      </div>
+      <div class="contact-card">
+        <h3>Fale conosco</h3>
+        <p>WhatsApp: <a id="wa_display" class="link" target="_blank" rel="noopener">Abrir conversa</a></p>
+        <p>Telefone: <span id="telefone"></span></p>
+        <p>E-mail: <a id="email_link" class="link"></a></p>
+      </div>
+    </div>
+    <div class="container map-wrap">
+      <iframe id="map_iframe" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container flex between center-v">
+      <small>&copy; <span data-bind="year"></span> <span data-bind="business_name">Negócio</span>. <span data-bind="footer_text">Todos os direitos reservados.</span></small>
+      <small>Site por <a href="#" target="_blank" rel="noopener" data-bind="agency">Sua Agência</a></small>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flutuante -->
+  <a id="wa_float" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+    <!-- Ícone WhatsApp -->
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+      <path fill="currentColor" d="M19.1 17.3c-.3-.2-1.7-.9-1.9-1s-.4-.2-.6 0-.7.9-.9 1-.3.2-.6.1a7.2 7.2 0 01-2.1-1.3 7.6 7.6 0 01-1.4-1.7c-.2-.3 0-.4.1-.6l.4-.5a2 2 0 00.3-.5.6.6 0 000-.6c0-.2-.6-1.5-.9-2s-.5-.4-.7-.4h-.6a1.1 1.1 0 00-.7.3 2.2 2.2 0 00-.7 1.7 3.8 3.8 0 00.8 2.1 8.6 8.6 0 003.4 3.3c2 .9 2.4.8 2.8.7a2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1c-.1-.2-.2-.2-.5-.4zM27 5a14 14 0 10-5 25.6l3.2.8a1 1 0 001.2-1.2l-.8-3.1A14 14 0 0027 5zm-2.8 18.2a11.3 11.3 0 01-5.4 3.1 11.5 11.5 0 01-9.5-2.2A11.4 11.4 0 017.7 8.1a11.5 11.5 0 0115.9 16.1z"/>
+    </svg>
+  </a>
+
+  <script src="static/js/app.js"></script>
+</body>
+</html>
