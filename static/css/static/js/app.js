@@ -1,6 +1,6 @@
 (async function () {
   // Carregar config
-  const res = await fetch('data/site.json');
+  const res = await fetch(`data/site.json?v=${Date.now()}`);
   const cfg = await res.json();
 
   // Util
@@ -15,8 +15,14 @@
   setText('footer_text', cfg.footer?.text || 'Todos os direitos reservados.');
   setText('agency', cfg.footer?.agency || 'Sua Agência');
 
-  // Hero / banner
-  if (cfg.hero?.image) qs('.hero').style.backgroundImage = `url('${cfg.hero.image}')`;
+  // Hero / banner (força o background completo com degradê + imagem)
+  if (cfg.hero?.image) {
+    const heroEl = qs('.hero');
+    heroEl.style.setProperty(
+      'background',
+      `linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.35)), url('${cfg.hero.image}') center/cover no-repeat`
+    );
+  }
   if (cfg.hero?.headline) setText('headline', cfg.hero.headline);
   if (cfg.hero?.subheadline) setText('subheadline', cfg.hero.subheadline);
   if (cfg.hero?.badges) {
