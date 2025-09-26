@@ -2,12 +2,17 @@
   // -------- Carregar config com caminhos de fallback (corrige 404 do site.json) --------
   async function carregarConfig() {
     const candidatos = [
+      // caminho REAL na sua estrutura atual
+      "static/css/static/js/data/site.json",
+      "/static/css/static/js/data/site.json",
+
+      // demais fallbacks (mantidos)
+      "static/js/data/site.json",
+      "/static/js/data/site.json",
       "data/site.json",
       "./data/site.json",
       "/data/site.json",
-      "site.json",
-      "static/js/data/site.json",   // <- adicionado
-      "/static/js/data/site.json"   // <- adicionado
+      "site.json"
     ];
 
     for (const base of candidatos) {
