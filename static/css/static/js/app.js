@@ -1,7 +1,28 @@
 (async function () {
-  // Carregar config (com cache-bust)
-  const res = await fetch(`data/site.json?v=${Date.now()}`);
-  const cfg = await res.json();
+  // -------- Carregar config com caminhos de fallback (corrige 404 do site.json) --------
+  async function carregarConfig() {
+    const candidatos = [
+      "data/site.json",
+      "./data/site.json",
+      "/data/site.json",
+      "site.json"
+    ];
+
+    for (const base of candidatos) {
+      const url = `${base}${base.includes("?") ? `&v=${Date.now()}` : `?v=${Date.now()}`}`;
+      try {
+        const r = await fetch(url, { cache: "no-store" });
+        if (r.ok) {
+          return await r.json();
+        }
+      } catch (e) {
+        // tenta próximo candidato
+      }
+    }
+    throw new Error("Não foi possível localizar data/site.json em nenhum caminho conhecido.");
+  }
+
+  const cfg = await carregarConfig();
 
   // Utils
   const qs = (sel) => document.querySelector(sel);
