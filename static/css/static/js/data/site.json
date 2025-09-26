@@ -1,0 +1,62 @@
+{
+  "meta_title": "Site Profissional – Restaurante Demo",
+  "colors": { "primary": "#e63946" },
+  "business": {
+    "name": "Restaurante Matriz",
+    "cnpj": "12.345.678/0001-90",
+    "legal_name": "Matriz Alimentação LTDA",
+    "address": "Av. Brasil, 123 — Centro, Sua Cidade/UF",
+    "hours": ["Seg a Sex: 11h às 22h", "Sábado: 11h às 23h", "Domingo: 12h às 22h"],
+    "maps_embed": "https://www.google.com/maps/embed?pb=COLE_AQUI_A_URL_DO_EMBED"
+  },
+  "contact": {
+    "phone": "(11) 99999-9999",
+    "whatsapp": "+55 (11) 99999-9999",
+    "wa_message": "Olá! Quero fazer um pedido 🙂",
+    "email": "contato@restaurantedemo.com.br"
+  },
+  "hero": {
+    "image": "static/img/hero.jpg",
+    "headline": "Sabor e agilidade para o seu dia.",
+    "subheadline": "Ingredientes frescos e atendimento direto no WhatsApp.",
+    "badges": ["Entrega rápida", "Receitas artesanais", "Equipe dedicada"]
+  },
+  "cards": [
+    {
+      "title": "Cardápio Variado",
+      "text": "Massas, grelhados, saladas e sobremesas. Opções para todos os gostos.",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349"
+    },
+    {
+      "title": "Delivery & Retirada",
+      "text": "Peça pelo WhatsApp e receba em casa, ou retire no balcão sem fila.",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947"
+    },
+    {
+      "title": "Qualidade Garantida",
+      "text": "Seleção de fornecedores e controle de preparo do início ao fim.",
+      "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"
+    }
+  ],
+  "legal_info": {
+    "lines": [
+      "CNPJ: 12.345.678/0001-90 — Razão Social: Matriz Alimentação LTDA",
+      "Inscrição Municipal: 000000 — Inscrição Estadual: Isento",
+      "Endereço Fiscal: Av. Brasil, 123 — Centro — CEP 00000-000"
+    ]
+  },
+  "about": {
+    "title": "Quem somos",
+    "text": "Somos apaixonados por gastronomia acessível. Acreditamos em comida bem feita, serviço honesto e processos simples.",
+    "history_title": "Nossa História",
+    "history": "Nascemos em 2020 com a missão de levar sabor e agilidade ao dia a dia. Crescemos com o boca a boca e seguimos evoluindo."
+  },
+  "payments": {
+    "methods": ["Pix", "Visa", "Mastercard", "Elo", "Amex"],
+    "note": "Pagamentos aceitos no balcão e no delivery. Consulte condições para pedidos grandes."
+  },
+  "certs": {
+    "items": ["Site Seguro (SSL)", "Ambiente verificado", "Boas práticas de dados (LGPD)"]
+  },
+  "footer": { "text": "Todos os direitos reservados.", "agency": "Sua Agência" }
+}
