@@ -25,8 +25,20 @@ img{max-width:100%;display:block}
 .btn-ghost{border:1px solid var(--border);color:var(--text);text-decoration:none;padding:10px 16px;border-radius:10px}
 .link{color:var(--primary);text-decoration:none}
 
-.hero{position:relative;min-height:60vh;background:url('../img/hero.jpg') center/cover no-repeat;color:#fff;display:flex;align-items:center}
-.hero .overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.35))}
+/* Hero sem imagem/gradiente padrão; tudo controlado via JS */
+.hero{
+  position:relative;
+  min-height:60vh;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  background:none;            /* removido o background fixo */
+}
+.hero .overlay{
+  position:absolute;
+  inset:0;
+  background:none;            /* removido o gradiente (tarja cinza) */
+}
 .hero-inner{position:relative;z-index:1;padding:56px 0}
 .hero-title{font-size:40px;margin:0 0 10px}
 .hero-sub{opacity:.95;margin:0 0 16px}
