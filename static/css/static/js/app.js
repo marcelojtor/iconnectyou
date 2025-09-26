@@ -5,7 +5,9 @@
       "data/site.json",
       "./data/site.json",
       "/data/site.json",
-      "site.json"
+      "site.json",
+      "static/js/data/site.json",   // <- adicionado
+      "/static/js/data/site.json"   // <- adicionado
     ];
 
     for (const base of candidatos) {
@@ -19,7 +21,7 @@
         // tenta próximo candidato
       }
     }
-    throw new Error("Não foi possível localizar data/site.json em nenhum caminho conhecido.");
+    throw new Error("Não foi possível localizar o arquivo site.json em caminhos conhecidos.");
   }
 
   const cfg = await carregarConfig();
@@ -53,6 +55,8 @@
     const tentativas = candidatos.filter((p) => (vistos.has(p) ? false : vistos.add(p)));
 
     const heroEl = qs(".hero");
+    if (!heroEl) return; // proteção caso o container não exista
+
     for (const src of tentativas) {
       try {
         await new Promise((ok, nok) => {
