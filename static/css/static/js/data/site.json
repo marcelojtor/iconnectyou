@@ -17,24 +17,24 @@
   },
   "hero": {
     "image": "/hub_de_imagens/Banners/full_banner.png",
-    "headline": "Tecnologia e agilidade para o seu dia.",
-    "subheadline": "Desenvolvimento de sistemas, sites com tecnologia e IA.",
+    "headline": "Tecnologia e agilidade para o seu negócio.",
+    "subheadline": "Desenvolvimento de sistemas, websites com tecnologia e IA.",
     "badges": ["Entrega no prazo", "Desenvolvimento lógico", "Equipe dedicada"]
   },
   "cards": [
     {
       "title": "Modelagem de Sistemas",
-      "text": "Massas, grelhados, saladas e sobremesas. Opções para todos os gostos.",
+      "text": "Modelagem de Sistemas: transforme ideias em soluções claras, estruturadas e eficientes para o seu negócio.",
       "image": "https://images.unsplash.com/photo-1550547660-d9450f859349"
     },
     {
       "title": "Construção de Websites",
-      "text": "Peça pelo WhatsApp e receba em casa, ou retire no balcão sem fila.",
+      "text": "Crie presença digital com sites modernos, rápidos e personalizados para o seu negócio.",
       "image": "https://images.unsplash.com/photo-1544025162-d76694265947"
     },
     {
       "title": "Design Moderno",
-      "text": "Seleção de fornecedores e controle de preparo do início ao fim.",
+      "text": "Soluções visuais criativas e elegantes que destacam sua marca e encantam seus clientes.",
       "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"
     }
   ],
