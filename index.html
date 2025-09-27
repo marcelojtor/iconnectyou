@@ -5,9 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-bind="title">Negócio — Site Matriz</title>
   <meta name="description" content="Presença digital rápida com site profissional, WhatsApp e informações legais." />
+
+  <!-- Anti-cache (nível HTML; não quebra nada) -->
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <link rel="stylesheet" href="static/css/styles.css" />
   <link rel="preload" href="static/css/static/js/data/site.json" as="fetch" crossorigin="anonymous" />
 
+  <!-- Cache-buster cirúrgico para CSS, preload e imagens locais -->
+  <script>
+    (function() {
+      const stamp = Date.now();
+      const addBust = (url) => url ? (url.includes('?') ? url + '&v=' + stamp : url + '?v=' + stamp) : url;
+
+      // 1) CSS principal
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+          if (/static\/css\/styles\.css(\?|$)/.test(link.getAttribute('href') || '')) {
+            link.href = addBust(link.getAttribute('href'));
+          }
+        });
+
+        // 2) Preload do site.json
+        const preloadJSON = document.querySelector('link[rel="preload"][as="fetch"]');
+        if (preloadJSON) {
+          preloadJSON.href = addBust(preloadJSON.getAttribute('href'));
+        }
+
+        // 3) Imagens locais já existentes (somente do hub_de_imagens/)
+        const patchImg = (img) => {
+          const src = img.getAttribute('src');
+          if (!src) return;
+          if (/^\/?hub_de_imagens\//.test(src)) {
+            img.src = addBust(src);
+          }
+        };
+        document.querySelectorAll('img').forEach(patchImg);
+
+        // 4) Imagens locais que forem adicionadas depois (dinâmicas)
+        const mo = new MutationObserver((muts) => {
+          muts.forEach(m => {
+            m.addedNodes.forEach(n => {
+              if (n.nodeType !== 1) return;
+              if (n.tagName === 'IMG') patchImg(n);
+              if (n.querySelectorAll) n.querySelectorAll('img').forEach(patchImg);
+            });
+          });
+        });
+        mo.observe(document.documentElement, { childList: true, subtree: true });
+      });
+    })();
+  </script>
 </head>
 <body>
   <!-- Topbar -->
