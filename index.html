@@ -14,6 +14,20 @@
   <link rel="stylesheet" href="static/css/styles.css" />
   <link rel="preload" href="static/css/static/js/data/site.json" as="fetch" crossorigin="anonymous" />
 
+  <!-- 🔒 Fix cirúrgico de especificidade para manter o botão do WhatsApp verde -->
+  <style>
+    :root { --brand-green: #22c55e; }
+    /* Alta especificidade + !important apenas para o botão do WhatsApp no topo */
+    header.topbar .btn-whatsapp,
+    .topbar .btn-whatsapp,
+    a.btn-whatsapp{
+      background: var(--brand-green) !important;
+      border-color: var(--brand-green) !important;
+      color: #fff !important;
+    }
+    a.btn-whatsapp:hover{ filter: brightness(0.92); }
+  </style>
+
   <!-- Cache-buster cirúrgico para CSS, preload e imagens locais -->
   <script>
     (function() {
@@ -74,7 +88,8 @@
         <a href="#certificados">Certificados</a>
         <a href="#contato">Contato</a>
       </nav>
-      <a class="btn-primary" data-bind="whatsapp_link" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <!-- ✅ apenas adição da classe 'btn-whatsapp' para aplicar o fix -->
+      <a class="btn-primary btn-whatsapp" data-bind="whatsapp_link" target="_blank" rel="noopener">Falar no WhatsApp</a>
     </div>
   </header>
 
