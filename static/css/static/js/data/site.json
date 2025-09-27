@@ -17,23 +17,23 @@
   },
   "hero": {
     "image": "/hub_de_imagens/Banners/full_banner.png",
-    "headline": "Sabor e agilidade para o seu dia.",
-    "subheadline": "Ingredientes frescos e atendimento direto no WhatsApp.",
-    "badges": ["Entrega rápida", "Receitas artesanais", "Equipe dedicada"]
+    "headline": "Tecnologia e agilidade para o seu dia.",
+    "subheadline": "Desenvolvimento de sistemas, sites com tecnologia e IA.",
+    "badges": ["Entrega no prazo", "Desenvolvimento lógico", "Equipe dedicada"]
   },
   "cards": [
     {
-      "title": "Cardápio Variado",
+      "title": "Modelagem de Sistemas",
       "text": "Massas, grelhados, saladas e sobremesas. Opções para todos os gostos.",
       "image": "https://images.unsplash.com/photo-1550547660-d9450f859349"
     },
     {
-      "title": "Delivery & Retirada",
+      "title": "Construção de Websites",
       "text": "Peça pelo WhatsApp e receba em casa, ou retire no balcão sem fila.",
       "image": "https://images.unsplash.com/photo-1544025162-d76694265947"
     },
     {
-      "title": "Qualidade Garantida",
+      "title": "Design Moderno",
       "text": "Seleção de fornecedores e controle de preparo do início ao fim.",
       "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"
     }
