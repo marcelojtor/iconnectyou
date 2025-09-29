@@ -32,12 +32,12 @@ img{max-width:100%;display:block}
   color:#fff;
   display:flex;
   align-items:center;
-  background:none;            /* removido o background fixo */
+  background:none;
 }
 .hero .overlay{
   position:absolute;
   inset:0;
-  background:none;            /* removido o gradiente (tarja cinza) */
+  background:none;
 }
 .hero-inner{position:relative;z-index:1;padding:56px 0}
 .hero-title{font-size:40px;margin:0 0 10px}
@@ -97,3 +97,53 @@ img{max-width:100%;display:block}
   transform:translateY(120%);opacity:0;transition:transform .3s ease,opacity .3s ease;
 }
 .whatsapp-float.show{transform:translateY(0);opacity:1}
+
+/* =======================================================
+   ========== AJUSTES DE RESPONSIVIDADE (MOBILE) =========
+   ======================================================= */
+
+/* Telas até 900px (tablets e celulares grandes) */
+@media (max-width:900px){
+  /* Menu em coluna para não quebrar */
+  .nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px;
+  }
+  .nav a{
+    padding:8px 10px;
+    font-size:15px;
+  }
+
+  /* Hero */
+  .hero-inner{padding:36px 0}
+  .hero-title{font-size:32px;line-height:1.2}
+  .hero-sub{font-size:16px}
+  .actions .btn-primary,
+  .actions .btn-ghost{padding:8px 14px;font-size:15px}
+  .badges{flex-wrap:wrap}
+  .badges li{padding:6px 10px;font-size:14px}
+
+  /* Cards */
+  .card .thumb{height:140px}
+
+  /* Contato / Mapa */
+  .map-wrap{height:300px}
+}
+
+/* Telas até 600px (celulares pequenos) */
+@media (max-width:600px){
+  /* Hero */
+  .hero-title{font-size:26px}
+  .hero-sub{font-size:14px}
+  .actions{flex-direction:column;gap:10px;align-items:flex-start}
+  .actions .btn-primary,
+  .actions .btn-ghost{width:100%;text-align:center}
+
+  /* Cards ainda menores */
+  .card .thumb{height:120px}
+
+  /* Topbar botão WhatsApp menor */
+  .btn-whatsapp{padding:6px 10px;font-size:13px}
+}
