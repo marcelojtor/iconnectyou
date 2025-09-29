@@ -11,8 +11,9 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <link rel="stylesheet" href="static/css/styles.css" />
-  <link rel="preload" href="static/css/static/js/data/site.json" as="fetch" crossorigin="anonymous" />
+  <!-- ✅ Cache-buster direto nos assets principais -->
+  <link rel="stylesheet" href="static/css/styles.css?v=20250929" />
+  <link rel="preload" href="static/css/static/js/data/site.json?v=20250929" as="fetch" crossorigin="anonymous" />
 
   <!-- 🔒 Fix cirúrgico de especificidade para manter o botão do WhatsApp verde -->
   <style>
@@ -34,7 +35,7 @@
       const stamp = Date.now();
       const addBust = (url) => url ? (url.includes('?') ? url + '&v=' + stamp : url + '?v=' + stamp) : url;
 
-      // 1) CSS principal
+      // 1) CSS principal (reforço)
       document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
           if (/static\/css\/styles\.css(\?|$)/.test(link.getAttribute('href') || '')) {
@@ -42,7 +43,7 @@
           }
         });
 
-        // 2) Preload do site.json
+        // 2) Preload do site.json (reforço)
         const preloadJSON = document.querySelector('link[rel="preload"][as="fetch"]');
         if (preloadJSON) {
           preloadJSON.href = addBust(preloadJSON.getAttribute('href'));
@@ -78,7 +79,7 @@
   <header class="topbar">
     <div class="container flex between center-v">
       <a class="brand flex center-v" href="#home" aria-label="Ir para início">
-        <img src="hub_de _imagens/Logo/logo_topo.png" alt="Logo" class="logo" />
+        <img src="hub_de_imagens/Logo/logo_topo.png" alt="Logo" class="logo" />
         <span data-bind="business_name">IconnectYou</span>
       </a>
       <nav class="nav">
@@ -304,6 +305,7 @@
     </svg>
   </a>
 
-  <script src="static/css/static/js/app.js" defer></script>
+  <!-- ✅ Cache-buster direto no JS principal -->
+  <script src="static/css/static/js/app.js?v=20250929" defer></script>
 </body>
 </html>
